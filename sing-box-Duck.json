@@ -27,7 +27,8 @@
       "type": "selector",
       "tag": "select",
       "outbounds": [
-        "auto",
+        "auto-gstatic",
+        "auto-cloudflare",
         "🇦🇪 United Arab Emirates",
         "🇩🇪 Germany",
         "🇩🇪 Germany-2",
@@ -53,7 +54,7 @@
     },
     {
       "type": "urltest",
-      "tag": "auto",
+      "tag": "auto-gstatic",
       "outbounds": [
         "🇦🇪 United Arab Emirates",
         "🇩🇪 Germany",
@@ -78,6 +79,35 @@
         "🇻🇳 Vietnam"
       ],
       "url": "https://www.gstatic.com/generate_204",
+      "interval": "5m"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto-cloudflare",
+      "outbounds": [
+        "🇦🇪 United Arab Emirates",
+        "🇩🇪 Germany",
+        "🇩🇪 Germany-2",
+        "🇩🇪 Germany-3",
+        "🇫🇷 France",
+        "🇫🇷 France-2",
+        "🇫🇷 France-3",
+        "🇫🇷 France-4",
+        "🇯🇵 Japan",
+        "🇳🇱 The Netherlands",
+        "🇳🇱 The Netherlands-2",
+        "🇳🇱 The Netherlands-3",
+        "🇳🇱 The Netherlands-4",
+        "🇳🇱 The Netherlands-5",
+        "🇳🇱 The Netherlands-6",
+        "🇳🇱 The Netherlands-7",
+        "🇵🇱 Poland",
+        "🇷🇺 Russia",
+        "🇹🇷 Türkiye",
+        "🇺🇸 United States",
+        "🇻🇳 Vietnam"
+      ],
+      "url": "https://cp.cloudflare.com/generate_204",
       "interval": "5m"
     },
     {
