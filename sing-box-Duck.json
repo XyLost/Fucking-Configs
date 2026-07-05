@@ -1,0 +1,403 @@
+{
+  "log": {
+    "level": "warning"
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "interface_name": "tun0",
+      "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "system",
+      "sniff": true
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2080
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "🇦🇪 United Arab Emirates",
+        "🇩🇪 Germany",
+        "🇩🇪 Germany-2",
+        "🇩🇪 Germany-3",
+        "🇫🇷 France",
+        "🇫🇷 France-2",
+        "🇫🇷 France-3",
+        "🇫🇷 France-4",
+        "🇯🇵 Japan",
+        "🇳🇱 The Netherlands",
+        "🇳🇱 The Netherlands-2",
+        "🇳🇱 The Netherlands-3",
+        "🇳🇱 The Netherlands-4",
+        "🇳🇱 The Netherlands-5",
+        "🇳🇱 The Netherlands-6",
+        "🇳🇱 The Netherlands-7",
+        "🇵🇱 Poland",
+        "🇷🇺 Russia",
+        "🇹🇷 Türkiye",
+        "🇺🇸 United States",
+        "🇻🇳 Vietnam"
+      ]
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "🇦🇪 United Arab Emirates",
+        "🇩🇪 Germany",
+        "🇩🇪 Germany-2",
+        "🇩🇪 Germany-3",
+        "🇫🇷 France",
+        "🇫🇷 France-2",
+        "🇫🇷 France-3",
+        "🇫🇷 France-4",
+        "🇯🇵 Japan",
+        "🇳🇱 The Netherlands",
+        "🇳🇱 The Netherlands-2",
+        "🇳🇱 The Netherlands-3",
+        "🇳🇱 The Netherlands-4",
+        "🇳🇱 The Netherlands-5",
+        "🇳🇱 The Netherlands-6",
+        "🇳🇱 The Netherlands-7",
+        "🇵🇱 Poland",
+        "🇷🇺 Russia",
+        "🇹🇷 Türkiye",
+        "🇺🇸 United States",
+        "🇻🇳 Vietnam"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "5m"
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇦🇪 United Arab Emirates",
+      "server": "130.49.161.70",
+      "server_port": 443,
+      "password": "p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR",
+      "tls": {
+        "enabled": true,
+        "server_name": "hy2.aspidnet.xyz",
+        "insecure": false
+      },
+      "obfs": {
+        "type": "salamander",
+        "password": "rG07s3COMIEvdnQipRyWzx_H_2xygNC3"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪 Germany",
+      "server": "173.245.59.162",
+      "server_port": 443,
+      "uuid": "c35050ce-01ab-45a9-91b8-54cec637d0a8",
+      "transport": {
+        "type": "ws",
+        "path": "/udfyfws",
+        "headers": {
+          "Host": "octopusss5.info"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "JoinProxyVPN11.octopusss5.info",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇩🇪 Germany-2",
+      "server": "91.107.152.188",
+      "server_port": 40460,
+      "password": "T%26me%26V2RayyNGvpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.amd.com",
+        "insecure": true
+      },
+      "obfs": {
+        "type": "salamander",
+        "password": "t-me-V2RayyNGvpn"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇩🇪 Germany-3",
+      "server": "cuetara.name.cuetara.name",
+      "server_port": 2083,
+      "password": "TELEGRAM-ID-conf0088",
+      "tls": {
+        "enabled": true,
+        "server_name": "cuetara.name.cuetara.name",
+        "insecure": false
+      },
+      "obfs": {
+        "type": "salamander",
+        "password": "huwt5r6qnb3nifno"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇫🇷 France",
+      "server": "104.18.152.225",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.ignitelimit.com",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.ignitelimit.com"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇫🇷 France-2",
+      "server": "38.60.168.129",
+      "server_port": 443,
+      "password": "Lw_DP4%2BW.J5K33MD2Jy5zQVuT5n71%2B%3DBcD",
+      "tls": {
+        "enabled": true,
+        "server_name": "38.60.168.129",
+        "insecure": false
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇫🇷 France-3",
+      "server": "104.16.174.12",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.ignitelimit.com",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.ignitelimit.com"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇷 France-4",
+      "server": "104.17.121.110",
+      "server_port": 443,
+      "uuid": "b2f6aa3a-2550-4a1c-b2c0-1c94b1207217",
+      "transport": {
+        "type": "ws",
+        "path": "/hdgrbws",
+        "headers": {
+          "Host": "terazhediii.info"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "terazhediii.info",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇯🇵 Japan",
+      "server": "103.125.216.18",
+      "server_port": 443,
+      "password": "T9qoEuuxUEa9Dk3KxnTWrs6J8ilng9sCIf",
+      "tls": {
+        "enabled": true,
+        "server_name": "103.125.216.18",
+        "insecure": false
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇳🇱 The Netherlands",
+      "server": "82.38.31.176",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "k1dBOmOB4oqi7Ump37a1bQ"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇳🇱 The Netherlands-2",
+      "server": "82.38.31.211",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "k1dBOmOB4oqi7Ump37a1bQ"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇳🇱 The Netherlands-3",
+      "server": "82.38.31.203",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "k1dBOmOB4oqi7Ump37a1bQ"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇳🇱 The Netherlands-4",
+      "server": "82.38.31.213",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "k1dBOmOB4oqi7Ump37a1bQ"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇳🇱 The Netherlands-5",
+      "server": "82.38.31.11",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "oZIoA69Q8yhcQV8ka3Pa3A"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇳🇱 The Netherlands-6",
+      "server": "104.19.230.21",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.multiplydose.com",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.multiplydose.com"
+        }
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇳🇱 The Netherlands-7",
+      "server": "82.38.31.47",
+      "server_port": 8080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "oZIoA69Q8yhcQV8ka3Pa3A"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇵🇱 Poland",
+      "server": "43.169.18.179",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.creationlong.org",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.creationlong.org"
+        }
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇷🇺 Russia",
+      "server": "80.66.81.78",
+      "server_port": 9443,
+      "password": "rs2mR3g9bZiMloftx6lZQ59Um1Ld",
+      "tls": {
+        "enabled": true,
+        "server_name": "tunel1.washing.help",
+        "insecure": false
+      },
+      "obfs": {
+        "type": "salamander",
+        "password": "oMgvuBy5Lj5kYM57sGsnjpjNcSEQ"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇹🇷 Türkiye",
+      "server": "tr-1.metsima.com",
+      "server_port": 52067,
+      "password": "zru63dr6vokx56iy",
+      "tls": {
+        "enabled": true,
+        "server_name": "tr-1.metsima.com",
+        "insecure": false
+      },
+      "obfs": {
+        "type": "salamander",
+        "password": "60wvbymjlc9zw3gk"
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸 United States",
+      "server": "216.36.115.182",
+      "server_port": 48885,
+      "uuid": "929f4b3b-60ed-4c7d-e94e-243ee9bbc743",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {}
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇻🇳 Vietnam",
+      "server": "38.60.252.118",
+      "server_port": 443,
+      "password": "NAdtbpuyJXPH%3DCfKmdBqD2YVbzdvwAtuxw",
+      "tls": {
+        "enabled": true,
+        "server_name": "38.60.252.118",
+        "insecure": false
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "protocol": "dns",
+        "outbound": "direct"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true
+  }
+}
