@@ -349,7 +349,7 @@
       "tls": {
         "enabled": true,
         "server_name": "hy2.aspidnet.xyz",
-        "insecure": true
+        "insecure": false
       },
       "obfs": {
         "type": "salamander",
@@ -422,7 +422,7 @@
       "tls": {
         "enabled": true,
         "server_name": "www.amd.com",
-        "insecure": true
+        "insecure": false
       },
       "obfs": {
         "type": "salamander",
@@ -438,7 +438,7 @@
       "tls": {
         "enabled": true,
         "server_name": "www.amd.com",
-        "insecure": true
+        "insecure": false
       },
       "obfs": {
         "type": "salamander",
@@ -499,7 +499,7 @@
       "tls": {
         "enabled": true,
         "server_name": "130.61.50.75",
-        "insecure": true
+        "insecure": false
       }
     },
     {
@@ -851,7 +851,7 @@
       "tls": {
         "enabled": true,
         "server_name": "www.gossipglove.com",
-        "insecure": true
+        "insecure": false
       },
       "transport": {
         "type": "ws",
@@ -870,7 +870,7 @@
       "tls": {
         "enabled": true,
         "server_name": "www.gossipglove.com",
-        "insecure": true
+        "insecure": false
       },
       "transport": {
         "type": "ws",
@@ -1266,7 +1266,7 @@
       "tls": {
         "enabled": true,
         "server_name": "www.ignitelimit.com",
-        "insecure": true
+        "insecure": false
       },
       "transport": {
         "type": "ws",
@@ -1505,7 +1505,7 @@
       "tls": {
         "enabled": true,
         "server_name": "186.190.211.188",
-        "insecure": true
+        "insecure": false
       }
     },
     {
@@ -1704,7 +1704,7 @@
       "tls": {
         "enabled": true,
         "server_name": "www.multiplydose.com",
-        "insecure": true
+        "insecure": false
       },
       "transport": {
         "type": "ws",
@@ -1723,7 +1723,7 @@
       "tls": {
         "enabled": true,
         "server_name": "www.multiplydose.com",
-        "insecure": true
+        "insecure": false
       },
       "transport": {
         "type": "ws",
@@ -1742,7 +1742,7 @@
       "tls": {
         "enabled": true,
         "server_name": "www.multiplydose.com",
-        "insecure": true
+        "insecure": false
       },
       "transport": {
         "type": "ws",
