@@ -1521,14 +1521,6 @@
     {
       "type": "direct",
       "tag": "direct"
-    },
-    {
-      "type": "block",
-      "tag": "block"
-    },
-    {
-      "type": "dns",
-      "tag": "dns-out"
     }
   ],
   "route": {
@@ -1538,12 +1530,13 @@
         "sniffer": [
           "http",
           "tls",
-          "quic"
+          "quic",
+          "dns"
         ]
       },
       {
         "protocol": "dns",
-        "outbound": "dns-out"
+        "action": "hijack-dns"
       },
       {
         "ip_is_private": true,
