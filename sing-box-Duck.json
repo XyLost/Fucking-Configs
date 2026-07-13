@@ -6,13 +6,13 @@
     "servers": [
       {
         "tag": "cloudflare-doh",
-        "address": "https://1.1.1.1/dns-query",
+        "address": "https://cloudflare-dns.com/dns-query",
         "detour": "select",
         "strategy": "ipv4_only"
       },
       {
         "tag": "google-doh",
-        "address": "https://8.8.8.8/dns-query",
+        "address": "https://dns.google/dns-query",
         "detour": "select",
         "strategy": "ipv4_only"
       },
