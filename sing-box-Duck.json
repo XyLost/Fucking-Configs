@@ -7,13 +7,15 @@
       {
         "tag": "cloudflare-doh",
         "type": "https",
-        "address": "https://1.1.1.1/dns-query",
+        "server": "1.1.1.1",
+        "server_port": 443,
         "detour": "select"
       },
       {
         "tag": "google-doh",
         "type": "https",
-        "address": "https://8.8.8.8/dns-query",
+        "server": "8.8.8.8",
+        "server_port": 443,
         "detour": "select"
       },
       {
@@ -37,8 +39,7 @@
     "rules": [
       {
         "outbound": "any",
-        "server": "local-dns",
-        "disable_cache": true
+        "server": "local-dns"
       }
     ],
     "final": "cloudflare-doh",
