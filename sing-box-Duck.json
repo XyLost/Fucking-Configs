@@ -5,45 +5,35 @@
   "dns": {
     "servers": [
       {
-        "tag": "cloudflare-doh",
         "type": "https",
+        "tag": "dns-cloudflare",
         "server": "1.1.1.1",
-        "server_port": 443,
+        "path": "/dns-query",
+        "tls": {
+          "server_name": "cloudflare-dns.com"
+        },
         "detour": "select"
       },
       {
-        "tag": "google-doh",
         "type": "https",
+        "tag": "dns-google",
         "server": "8.8.8.8",
-        "server_port": 443,
+        "path": "/dns-query",
+        "tls": {
+          "server_name": "dns.google"
+        },
         "detour": "select"
       },
       {
-        "tag": "cloudflare-udp",
         "type": "udp",
-        "address": "1.1.1.1",
+        "tag": "dns-udp",
+        "server": "1.1.1.1",
         "detour": "select"
-      },
-      {
-        "tag": "google-udp",
-        "type": "udp",
-        "address": "8.8.8.8",
-        "detour": "select"
-      },
-      {
-        "tag": "local-dns",
-        "type": "local",
-        "detour": "direct"
       }
     ],
-    "rules": [
-      {
-        "outbound": "any",
-        "server": "local-dns"
-      }
-    ],
-    "final": "cloudflare-doh",
-    "default_domain_resolver": "cloudflare-doh"
+    "final": "dns-cloudflare",
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
   },
   "inbounds": [
     {
@@ -1523,18 +1513,16 @@
     {
       "type": "direct",
       "tag": "direct"
+    },
+    {
+      "type": "block",
+      "tag": "block"
     }
   ],
   "route": {
     "rules": [
       {
-        "action": "sniff",
-        "sniffer": [
-          "http",
-          "tls",
-          "quic",
-          "dns"
-        ]
+        "action": "sniff"
       },
       {
         "protocol": "dns",
@@ -1547,14 +1535,5 @@
     ],
     "final": "select",
     "auto_detect_interface": true
-  },
-  "experimental": {
-    "clash_api": {
-      "external_controller": "127.0.0.1:9090",
-      "external_ui": "yacd",
-      "external_ui_download_url": "https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip",
-      "external_ui_download_detour": "direct",
-      "default_mode": "rule"
-    }
   }
 }
