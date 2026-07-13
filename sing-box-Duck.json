@@ -3,36 +3,42 @@
     "level": "warning"
   },
   "dns": {
+    "strategy": "ipv4_only",
     "servers": [
       {
         "tag": "cloudflare-doh",
-        "address": "https://cloudflare-dns.com/dns-query",
-        "detour": "select",
-        "strategy": "ipv4_only"
+        "type": "https",
+        "server": "1.1.1.1",
+        "detour": "select"
       },
       {
         "tag": "google-doh",
-        "address": "https://dns.google/dns-query",
-        "detour": "select",
-        "strategy": "ipv4_only"
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "select"
       },
       {
         "tag": "cloudflare-udp",
-        "address": "udp://1.1.1.1",
-        "detour": "select",
-        "strategy": "ipv4_only"
+        "type": "udp",
+        "server": "1.1.1.1",
+        "detour": "select"
       },
       {
         "tag": "google-udp",
-        "address": "udp://8.8.8.8",
-        "detour": "select",
-        "strategy": "ipv4_only"
+        "type": "udp",
+        "server": "8.8.8.8",
+        "detour": "select"
       },
       {
         "tag": "local-dns",
-        "address": "udp://1.1.1.1",
-        "detour": "direct",
-        "strategy": "ipv4_only"
+        "type": "local",
+        "detour": "direct"
+      }
+    ],
+    "rules": [
+      {
+        "outbound": "direct",
+        "server": "local-dns"
       }
     ],
     "final": "cloudflare-doh"
@@ -1538,8 +1544,7 @@
       }
     ],
     "final": "select",
-    "auto_detect_interface": true,
-    "default_domain_resolver": "cloudflare-doh"
+    "auto_detect_interface": true
   },
   "experimental": {
     "clash_api": {
