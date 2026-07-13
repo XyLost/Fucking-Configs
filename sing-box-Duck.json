@@ -6,28 +6,33 @@
     "servers": [
       {
         "tag": "cloudflare-doh",
-        "address": "https://cloudflare-dns.com/dns-query",
-        "detour": "select"
+        "address": "https://1.1.1.1/dns-query",
+        "detour": "select",
+        "strategy": "ipv4_only"
       },
       {
         "tag": "google-doh",
-        "address": "https://dns.google/dns-query",
-        "detour": "select"
+        "address": "https://8.8.8.8/dns-query",
+        "detour": "select",
+        "strategy": "ipv4_only"
       },
       {
         "tag": "cloudflare-udp",
         "address": "1.1.1.1",
-        "detour": "select"
+        "detour": "select",
+        "strategy": "ipv4_only"
       },
       {
         "tag": "google-udp",
         "address": "8.8.8.8",
-        "detour": "select"
+        "detour": "select",
+        "strategy": "ipv4_only"
       },
       {
         "tag": "local-dns",
         "address": "1.1.1.1",
-        "detour": "direct"
+        "detour": "direct",
+        "strategy": "ipv4_only"
       }
     ],
     "rules": [
@@ -36,8 +41,7 @@
         "server": "local-dns"
       }
     ],
-    "final": "cloudflare-doh",
-    "strategy": "ipv4_only"
+    "final": "cloudflare-doh"
   },
   "inbounds": [
     {
@@ -50,15 +54,13 @@
       ],
       "auto_route": true,
       "strict_route": true,
-      "stack": "system",
-      "sniff": true
+      "stack": "system"
     },
     {
       "type": "mixed",
       "tag": "mixed-in",
       "listen": "127.0.0.1",
-      "listen_port": 2080,
-      "sniff": true
+      "listen_port": 2080
     }
   ],
   "outbounds": [
@@ -1532,7 +1534,12 @@
   "route": {
     "rules": [
       {
-        "action": "sniff"
+        "action": "sniff",
+        "sniffer": [
+          "http",
+          "tls",
+          "quic"
+        ]
       },
       {
         "protocol": "dns",
