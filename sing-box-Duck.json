@@ -18,27 +18,21 @@
       },
       {
         "tag": "cloudflare-udp",
-        "address": "1.1.1.1",
+        "address": "udp://1.1.1.1",
         "detour": "select",
         "strategy": "ipv4_only"
       },
       {
         "tag": "google-udp",
-        "address": "8.8.8.8",
+        "address": "udp://8.8.8.8",
         "detour": "select",
         "strategy": "ipv4_only"
       },
       {
         "tag": "local-dns",
-        "address": "1.1.1.1",
+        "address": "udp://1.1.1.1",
         "detour": "direct",
         "strategy": "ipv4_only"
-      }
-    ],
-    "rules": [
-      {
-        "outbound": "direct",
-        "server": "local-dns"
       }
     ],
     "final": "cloudflare-doh"
@@ -1544,7 +1538,8 @@
       }
     ],
     "final": "select",
-    "auto_detect_interface": true
+    "auto_detect_interface": true,
+    "default_domain_resolver": "cloudflare-doh"
   },
   "experimental": {
     "clash_api": {
