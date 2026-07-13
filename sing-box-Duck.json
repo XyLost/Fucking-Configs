@@ -51,22 +51,14 @@
       "auto_route": true,
       "strict_route": true,
       "stack": "system",
-      "sniff": {
-        "enabled": true,
-        "override_destination": true,
-        "route_only": true
-      }
+      "sniff": true
     },
     {
       "type": "mixed",
       "tag": "mixed-in",
       "listen": "127.0.0.1",
       "listen_port": 2080,
-      "sniff": {
-        "enabled": true,
-        "override_destination": true,
-        "route_only": true
-      }
+      "sniff": true
     }
   ],
   "outbounds": [
@@ -1539,6 +1531,9 @@
   ],
   "route": {
     "rules": [
+      {
+        "action": "sniff"
+      },
       {
         "protocol": "dns",
         "outbound": "dns-out"
