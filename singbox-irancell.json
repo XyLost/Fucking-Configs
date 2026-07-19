@@ -1,0 +1,356 @@
+{
+  "log": {
+    "level": "warning"
+  },
+  "dns": {
+    "servers": [
+      {
+        "type": "https",
+        "tag": "dns-cloudflare",
+        "server": "1.1.1.1",
+        "path": "/dns-query",
+        "tls": {
+          "server_name": "cloudflare-dns.com"
+        },
+        "detour": "select"
+      },
+      {
+        "type": "https",
+        "tag": "dns-google",
+        "server": "8.8.8.8",
+        "path": "/dns-query",
+        "tls": {
+          "server_name": "dns.google"
+        },
+        "detour": "select"
+      },
+      {
+        "type": "udp",
+        "tag": "dns-udp",
+        "server": "1.1.1.1",
+        "detour": "select"
+      }
+    ],
+    "final": "dns-cloudflare",
+    "strategy": "prefer_ipv4",
+    "independent_cache": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "interface_name": "tun0",
+      "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "system"
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2080
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "select",
+      "outbounds": [
+        "auto",
+        "🇩🇪 Germany",
+        "🇩🇪 Germany-2",
+        "🇩🇪 Germany-3",
+        "🇫🇷 France",
+        "🇫🇷 France-2",
+        "🇫🇷 France-3",
+        "🇰🇷 South Korea",
+        "🇰🇷 South Korea-2",
+        "🇰🇷 South Korea-3",
+        "🇰🇷 South Korea-4",
+        "🇰🇷 South Korea-5",
+        "🇰🇷 South Korea-6",
+        "🇳🇱 The Netherlands",
+        "🇳🇱 The Netherlands-2",
+        "🇺🇸 United States",
+        "🇺🇸 United States-2"
+      ]
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "🇩🇪 Germany",
+        "🇩🇪 Germany-2",
+        "🇩🇪 Germany-3",
+        "🇫🇷 France",
+        "🇫🇷 France-2",
+        "🇫🇷 France-3",
+        "🇰🇷 South Korea",
+        "🇰🇷 South Korea-2",
+        "🇰🇷 South Korea-3",
+        "🇰🇷 South Korea-4",
+        "🇰🇷 South Korea-5",
+        "🇰🇷 South Korea-6",
+        "🇳🇱 The Netherlands",
+        "🇳🇱 The Netherlands-2",
+        "🇺🇸 United States",
+        "🇺🇸 United States-2"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "5m"
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪 Germany",
+      "server": "104.19.151.36",
+      "server_port": 2087,
+      "uuid": "7b102311-43fd-4e8f-877e-8090623c101d",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "vp25.cc.cd"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "vp25.cc.cd",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪 Germany-2",
+      "server": "104.19.148.230",
+      "server_port": 443,
+      "uuid": "7b102311-43fd-4e8f-877e-8090623c101d",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "vp42.cc.cd"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "vp42.cc.cd",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪 Germany-3",
+      "server": "173.245.58.87",
+      "server_port": 443,
+      "uuid": "eeb6823c-b926-4ea2-866a-5542edd26e59",
+      "transport": {
+        "type": "ws",
+        "path": "/fp",
+        "headers": {
+          "Host": "t1s1.rittbo.kdns.fr"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "t1s1.rittbo.kdns.fr",
+        "insecure": false
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇫🇷 France",
+      "server": "45.130.125.75",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.calmlunch.com",
+        "insecure": false
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.calmlunch.com"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇷 France-2",
+      "server": "172.64.32.75",
+      "server_port": 443,
+      "uuid": "073d1d50-8478-47bf-a828-7a1b381931d5",
+      "transport": {
+        "type": "ws",
+        "path": "/odiyfws",
+        "headers": {
+          "Host": "octopusss.net"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "octopusss.net",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇷 France-3",
+      "server": "173.245.58.75",
+      "server_port": 443,
+      "uuid": "073d1d50-8478-47bf-a828-7a1b381931d5",
+      "transport": {
+        "type": "ws",
+        "path": "/odiyfws",
+        "headers": {
+          "Host": "octopusss.net"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "octopusss.net",
+        "insecure": false
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇰🇷 South Korea",
+      "server": "141.164.45.187",
+      "server_port": 8119,
+      "method": "aes-256-gcm",
+      "password": "cdBIDV42DCwnfIN"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇰🇷 South Korea-2",
+      "server": "141.164.45.187",
+      "server_port": 6679,
+      "method": "aes-256-gcm",
+      "password": "TEzjfAYq2IjtuoS"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇰🇷 South Korea-3",
+      "server": "141.164.45.187",
+      "server_port": 5001,
+      "method": "aes-256-gcm",
+      "password": "Y6R9pAtvxxzmGC"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇰🇷 South Korea-4",
+      "server": "141.164.45.187",
+      "server_port": 9101,
+      "method": "aes-256-gcm",
+      "password": "e4FCWrgpkji3QY"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇰🇷 South Korea-5",
+      "server": "141.164.45.187",
+      "server_port": 6697,
+      "method": "aes-256-gcm",
+      "password": "TEzjfAYq2IjtuoS"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇰🇷 South Korea-6",
+      "server": "141.164.45.187",
+      "server_port": 2376,
+      "method": "aes-256-gcm",
+      "password": "faBAoD54k87UJG7"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇳🇱 The Netherlands",
+      "server": "82.38.31.57",
+      "server_port": 443,
+      "method": "chacha20-ietf-poly1305",
+      "password": "oZIoA69Q8yhcQV8ka3Pa3A"
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱 The Netherlands-2",
+      "server": "104.21.5.137",
+      "server_port": 443,
+      "uuid": "14b59caf-a196-4ec2-8c70-c7b388062f5b",
+      "transport": {
+        "type": "ws",
+        "path": "/rdfgtws",
+        "headers": {
+          "Host": "vangoghhh.info"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "vangoghhh.info",
+        "insecure": false
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇺🇸 United States",
+      "server": "156.146.38.169",
+      "server_port": 443,
+      "method": "aes-128-gcm",
+      "password": "shadowsocks"
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸 United States-2",
+      "server": "104.18.43.204",
+      "server_port": 80,
+      "uuid": "4a805850-a2c4-42b3-898a-798f0c19c609",
+      "transport": {
+        "type": "ws",
+        "path": "/sub",
+        "headers": {
+          "Host": "tqmfs45y.xn--nxa.nyc.mn"
+        }
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      }
+    ],
+    "final": "select",
+    "auto_detect_interface": true,
+    "default_domain_resolver": "dns-cloudflare"
+  }
+}
