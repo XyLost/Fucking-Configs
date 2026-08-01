@@ -61,60 +61,160 @@
       "tag": "select",
       "outbounds": [
         "auto",
+        "🇦🇹 Austria",
+        "🇧🇷 Brazil",
+        "🇨🇴 Colombia",
+        "🇨🇴 Colombia-2",
+        "🇨🇴 Colombia-3",
+        "🇨🇴 Colombia-4",
+        "🇨🇴 Colombia-5",
         "🇩🇪 Germany",
         "🇩🇪 Germany-2",
-        "🇩🇪 Germany-3",
+        "🇫🇮 Finland",
+        "🇫🇮 Finland-2",
         "🇫🇷 France",
-        "🇬🇧 United Kingdom",
-        "🇬🇧 United Kingdom-2",
-        "🇬🇧 United Kingdom-3",
-        "🇬🇧 United Kingdom-4",
+        "🇫🇷 France-2",
+        "🇫🇷 France-3",
         "🇭🇰 Hong Kong",
         "🇰🇷 South Korea",
         "🇳🇱 Netherlands",
-        "🇷🇸 Serbia",
+        "🇹🇭 Thailand",
+        "🇹🇭 Thailand-2",
+        "🇹🇭 Thailand-3",
+        "🇹🇷 Türkiye",
         "🇹🇼 Taiwan",
         "🇹🇼 Taiwan-2",
+        "🇹🇼 Taiwan-3",
+        "🇹🇼 Taiwan-4",
         "🇺🇸 United States",
         "🇺🇸 United States-2",
-        "🇺🇸 United States-3"
+        "🇺🇸 United States-3",
+        "🇺🇸 United States-4",
+        "🇺🇸 United States-5"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
+        "🇦🇹 Austria",
+        "🇧🇷 Brazil",
+        "🇨🇴 Colombia",
+        "🇨🇴 Colombia-2",
+        "🇨🇴 Colombia-3",
+        "🇨🇴 Colombia-4",
+        "🇨🇴 Colombia-5",
         "🇩🇪 Germany",
         "🇩🇪 Germany-2",
-        "🇩🇪 Germany-3",
+        "🇫🇮 Finland",
+        "🇫🇮 Finland-2",
         "🇫🇷 France",
-        "🇬🇧 United Kingdom",
-        "🇬🇧 United Kingdom-2",
-        "🇬🇧 United Kingdom-3",
-        "🇬🇧 United Kingdom-4",
+        "🇫🇷 France-2",
+        "🇫🇷 France-3",
         "🇭🇰 Hong Kong",
         "🇰🇷 South Korea",
         "🇳🇱 Netherlands",
-        "🇷🇸 Serbia",
+        "🇹🇭 Thailand",
+        "🇹🇭 Thailand-2",
+        "🇹🇭 Thailand-3",
+        "🇹🇷 Türkiye",
         "🇹🇼 Taiwan",
         "🇹🇼 Taiwan-2",
+        "🇹🇼 Taiwan-3",
+        "🇹🇼 Taiwan-4",
         "🇺🇸 United States",
         "🇺🇸 United States-2",
-        "🇺🇸 United States-3"
+        "🇺🇸 United States-3",
+        "🇺🇸 United States-4",
+        "🇺🇸 United States-5"
       ],
       "url": "https://www.gstatic.com/generate_204",
       "interval": "5m"
     },
     {
       "type": "vless",
-      "tag": "🇩🇪 Germany",
-      "server": "5.129.194.34",
-      "server_port": 4100,
-      "uuid": "9b44bfb4-9d28-4870-9fc3-5154d6d462ff",
+      "tag": "🇦🇹 Austria",
+      "server": "162.159.38.119",
+      "server_port": 443,
+      "uuid": "e911c552-3a98-41e0-b5fb-0dd3879887b7",
       "transport": {
         "type": "ws",
-        "path": "/v1",
-        "headers": {}
+        "path": "/api/v1/irc",
+        "headers": {
+          "Host": "vod.ensf.top"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "vod.ensf.top",
+        "insecure": false
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇧🇷 Brazil",
+      "server": "163.176.245.43",
+      "server_port": 59319,
+      "method": "chacha20-ietf-poly1305",
+      "password": "YjliYmFlNzVmMmE4ZmJkYjAxNzQ2NWUyNzZlNjhkZGU="
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇴 Colombia",
+      "server": "157.137.220.52",
+      "server_port": 62145,
+      "uuid": "8fb65472-5957-4f64-ba2d-b5812b2f155a"
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇴 Colombia-2",
+      "server": "157.137.211.117",
+      "server_port": 62145,
+      "uuid": "8fb65472-5957-4f64-ba2d-b5812b2f155a"
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇴 Colombia-3",
+      "server": "157.137.223.61",
+      "server_port": 62145,
+      "uuid": "8fb65472-5957-4f64-ba2d-b5812b2f155a"
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇴 Colombia-4",
+      "server": "157.137.220.13",
+      "server_port": 62145,
+      "uuid": "8fb65472-5957-4f64-ba2d-b5812b2f155a"
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇨🇴 Colombia-5",
+      "server": "154.223.16.96",
+      "server_port": 6697,
+      "method": "aes-256-gcm",
+      "password": "TEzjfAYq2IjtuoS"
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪 Germany",
+      "server": "104.18.1.1",
+      "server_port": 8443,
+      "uuid": "2e1eb27b-9b56-40e9-a2f8-b959bc71736e",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "ad-005.atlast9hdp.info."
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "ad-005.atlast9hdp.info.",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
       }
     },
     {
@@ -128,20 +228,43 @@
     },
     {
       "type": "vless",
-      "tag": "🇩🇪 Germany-3",
-      "server": "one-for-all.levikogjgfdd.ir",
-      "server_port": 2053,
-      "uuid": "e7961655-9674-4cbd-a36f-ec0d5d7d660c",
+      "tag": "🇫🇮 Finland",
+      "server": "www.speedtest.net",
+      "server_port": 8443,
+      "uuid": "8a88edf2-235a-4e74-a012-315e8b0f000c",
       "transport": {
         "type": "ws",
         "path": "/",
         "headers": {
-          "Host": "po.fastbrokencompony.com"
+          "Host": "oknoloy.dearhossein-taktaz.ir"
         }
       },
       "tls": {
         "enabled": true,
-        "server_name": "po.fastbrokencompony.com",
+        "server_name": "oknoloy.dearhossein-taktaz.ir",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇮 Finland-2",
+      "server": "www.canva.com",
+      "server_port": 2087,
+      "uuid": "8a88edf2-235a-4e74-a012-315e8b0f000c",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "oknoloy.dearhossein-taktaz.ir"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "oknoloy.dearhossein-taktaz.ir",
         "insecure": false,
         "utls": {
           "enabled": true,
@@ -152,6 +275,20 @@
     {
       "type": "vless",
       "tag": "🇫🇷 France",
+      "server": "13.38.194.199",
+      "server_port": 22223,
+      "uuid": "e4514801-0d5a-42ba-869f-39bd605aef9e"
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇷 France-2",
+      "server": "13.38.194.199",
+      "server_port": 22224,
+      "uuid": "e4514801-0d5a-42ba-869f-39bd605aef9e"
+    },
+    {
+      "type": "vless",
+      "tag": "🇫🇷 France-3",
       "server": "one-for-all.levikogjgfdd.ir",
       "server_port": 8443,
       "uuid": "901fc0c9-ae4c-4d06-9fed-253b25b68a0e",
@@ -169,101 +306,12 @@
       }
     },
     {
-      "type": "vless",
-      "tag": "🇬🇧 United Kingdom",
-      "server": "cf.levikogjgfdd.ir",
-      "server_port": 443,
-      "uuid": "b2f6aa3a-2550-4a1c-b2c0-1c94b1207217",
-      "transport": {
-        "type": "ws",
-        "path": "/hdgrbws",
-        "headers": {
-          "Host": "terazhediii.info"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "terazhediii.info",
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇬🇧 United Kingdom-2",
-      "server": "one-for-all.levikogjgfdd.ir",
-      "server_port": 443,
-      "uuid": "b2f6aa3a-2550-4a1c-b2c0-1c94b1207217",
-      "transport": {
-        "type": "ws",
-        "path": "/hdgrbws",
-        "headers": {
-          "Host": "terazhediii.info"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "terazhediii.info",
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇬🇧 United Kingdom-3",
-      "server": "millionaire.levikogjgfdd.ir",
-      "server_port": 443,
-      "uuid": "b2f6aa3a-2550-4a1c-b2c0-1c94b1207217",
-      "transport": {
-        "type": "ws",
-        "path": "/hdgrbws",
-        "headers": {
-          "Host": "terazhediii.info"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "terazhediii.info",
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇬🇧 United Kingdom-4",
-      "server": "162.159.38.119",
-      "server_port": 443,
-      "uuid": "b2f6aa3a-2550-4a1c-b2c0-1c94b1207217",
-      "transport": {
-        "type": "ws",
-        "path": "/hdgrbws",
-        "headers": {
-          "Host": "terazhediii.info"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "terazhediii.info",
-        "insecure": false
-      }
-    },
-    {
-      "type": "vmess",
+      "type": "shadowsocks",
       "tag": "🇭🇰 Hong Kong",
-      "server": "v9.hdacd.com",
-      "server_port": 30809,
-      "uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484",
-      "security": "auto",
-      "alter_id": 2
+      "server": "212.192.13.25",
+      "server_port": 10910,
+      "method": "aes-256-gcm",
+      "password": "72553320ae6bcc8f"
     },
     {
       "type": "trojan",
@@ -278,23 +326,120 @@
       }
     },
     {
-      "type": "shadowsocks",
+      "type": "hysteria2",
       "tag": "🇳🇱 Netherlands",
-      "server": "92.112.126.90",
+      "server": "130.49.161.70",
       "server_port": 443,
-      "method": "chacha20-ietf-poly1305",
-      "password": "9tqhMdIrTkgQ46PvhyAtMH"
+      "password": "p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR",
+      "tls": {
+        "enabled": true,
+        "server_name": "hy2.aspidnet.xyz",
+        "insecure": false
+      },
+      "obfs": {
+        "type": "salamander",
+        "password": "rG07s3COMIEvdnQipRyWzx_H_2xygNC3"
+      }
     },
     {
       "type": "vless",
-      "tag": "🇷🇸 Serbia",
-      "server": "195.133.18.161",
-      "server_port": 30153,
-      "uuid": "da97d2d7-d255-4efd-8398-7101d698768e"
+      "tag": "🇹🇭 Thailand",
+      "server": "170.114.46.6",
+      "server_port": 8080,
+      "uuid": "564150f0-c0ad-46d1-8cf1-71e1900322e8",
+      "transport": {
+        "type": "ws",
+        "path": "/mvpnpph2026",
+        "headers": {
+          "Host": "pphfree3.mvpnpvpn.de5.net"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇹🇭 Thailand-2",
+      "server": "www.true.th",
+      "server_port": 80,
+      "uuid": "89c3b66f-c849-4602-a5a8-84b6f06af478",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "d2pwbkmfr5lxa4.cloudfront.net"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇹🇭 Thailand-3",
+      "server": "dtac.exp.dog",
+      "server_port": 80,
+      "uuid": "19668b6f-e215-41e6-8102-b8d29fb5b8ae",
+      "transport": {
+        "type": "ws",
+        "path": "/fnet50",
+        "headers": {
+          "Host": "duatoup3wk8q2.cloudfront.net"
+        }
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇹🇷 Türkiye",
+      "server": "188.41.249.20",
+      "server_port": 1080,
+      "method": "chacha20-ietf-poly1305",
+      "password": "rYfi4cQ3z7zts7BO4-Y9_A"
     },
     {
       "type": "vless",
       "tag": "🇹🇼 Taiwan",
+      "server": "162.159.18.228",
+      "server_port": 2087,
+      "uuid": "29ca503d-e6b8-4509-b666-48133f450857",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "learn00.evany.de5.net"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "learn00.evany.de5.net",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇹🇼 Taiwan-2",
+      "server": "173.245.58.217",
+      "server_port": 8443,
+      "uuid": "29ca503d-e6b8-4509-b666-48133f450857",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "learn00.evany.de5.net"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "learn00.evany.de5.net",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇹🇼 Taiwan-3",
       "server": "millionaire.levikogjgfdd.ir",
       "server_port": 443,
       "uuid": "29ca503d-e6b8-4509-b666-48133f450857",
@@ -313,8 +458,8 @@
     },
     {
       "type": "vless",
-      "tag": "🇹🇼 Taiwan-2",
-      "server": "162.159.38.119",
+      "tag": "🇹🇼 Taiwan-4",
+      "server": "one-for-all.levikogjgfdd.ir",
       "server_port": 443,
       "uuid": "29ca503d-e6b8-4509-b666-48133f450857",
       "transport": {
@@ -327,30 +472,46 @@
       "tls": {
         "enabled": true,
         "server_name": "learn00.evany.de5.net",
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
+        "insecure": false
       }
     },
     {
       "type": "vless",
       "tag": "🇺🇸 United States",
+      "server": "104.21.90.146",
+      "server_port": 443,
+      "uuid": "e35a5ad5-0175-4cd6-b654-1eb220ff28f0",
+      "transport": {
+        "type": "ws",
+        "path": "/Wvf67jc5MgASmsb9Qsr0",
+        "headers": {
+          "Host": "node-dispatch-c8-2.e20260720.kdns.fr"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "node-dispatch-c8-2.e20260720.kdns.fr",
+        "insecure": false
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇺🇸 United States-2",
+      "server": "70.39.198.35",
+      "server_port": 54166,
+      "method": "chacha20-ietf-poly1305",
+      "password": "EvLfWGe0AKvK"
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸 United States-3",
       "server": "182.16.61.3",
       "server_port": 45647,
       "uuid": "431fe973-a43a-4fac-bf83-2a772e0d0625"
     },
     {
-      "type": "vless",
-      "tag": "🇺🇸 United States-2",
-      "server": "182.16.61.2",
-      "server_port": 45647,
-      "uuid": "caec0d8d-ab2f-4247-b97d-7fb1a34ab195"
-    },
-    {
       "type": "vmess",
-      "tag": "🇺🇸 United States-3",
+      "tag": "🇺🇸 United States-4",
       "server": "www.nextkyc.com",
       "server_port": 8443,
       "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
@@ -368,6 +529,13 @@
         "server_name": "v2ray1.dozapp.xyz",
         "insecure": false
       }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸 United States-5",
+      "server": "182.16.61.2",
+      "server_port": 45647,
+      "uuid": "caec0d8d-ab2f-4247-b97d-7fb1a34ab195"
     },
     {
       "type": "direct",
